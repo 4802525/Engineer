@@ -36,7 +36,7 @@
     - priorioty_queueというデータ構造を使うことでその操作の計算量をO(logN)に抑えることができる．
       全体の計算量はO((M+N)logN)で間に合う．
 
-  priority_queue:ヒープを用いたデータ構造
+  - priority_queue:ヒープを用いたデータ構造
     - 最大値の取得:O(1)
     - 最大値の取り出し:O(logN)
     - 値の追加:O(logN)  
@@ -47,8 +47,15 @@
 - [Equal Weight (JSC2019FA)][JSC2019FA]([解法][solveJSC2019FA])
   - 
   <details><summary>問題概要</summary>
+
+    - N個のシャリとM個のネタがあり，シャリiの重さはAi，ネタjの重さはBjである．
+    - 異なるシャリの重さは異なり，異なるネタの重さも異なる．
+    - シャリとネタを組み合わせて握りを作る．2つの異なる握りの重さが等しくなるようにできるか．
   </details>
   <details><summary>解法方針</summary>
+
+    - 愚直にやるとO($N^2M^2$)で間に合わない．
+    - 一度記録した重さを
   </details>
 
 - [Two Contests (AGC040B)][AGC040B]([解法][solveAGC040B])
