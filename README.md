@@ -10,7 +10,7 @@
       頂点pをねとする部分木に含まれる全ての頂点のカンターの値にxを足す
     - 全ての操作の後の各頂点のカウンターの値を求めよ．
   </details>
-  <details><summary>解法方針([解法](https://github.com/4802525/synapse/blob/master/Ki_ABC138D.cpp))</summary>
+  <details><summary>解法方針([解法][solveABC138D]</summary>
   </details>
 
 - [Powerful Discount Tickets (ABC141D)][ABC141D]
@@ -47,3 +47,8 @@
 [JSC2019FA]:https://atcoder.jp/contests/jsc2019-final/tasks/jsc2019_final_a
 [AGC040B]:https://atcoder.jp/contests/agc040/tasks/agc040_b
 [ABC144E]:https://atcoder.jp/contests/abc144/tasks/abc144_e
+[solveABC138D]:https://github.com/4802525/synapse/blob/master/Ki_ABC138D.cpp
+[solveABC141D]:https://github.com/4802525/synapse/blob/master/PowerfulDiscountTickets_ABC141D.cpp
+[solveJSC2019FA]:https://github.com/4802525/synapse/blob/master/EqualWeight_JSCF2019A.cpp
+[solveAGC040B]:https://github.com/4802525/synapse/blob/master/TwoContests_AGC040B.cpp
+[solveABC144E]:https://github.com/4802525/synapse/blob/master/Gluttony_ABC144E.cpp
