@@ -1,9 +1,34 @@
-# 問題と回答例
+問題と解法例
+=====
 - [Ki (ABC138D)][ABC138D]
+  -
+  - <details><summary>解法方針</summary>
+    hogehoge
+    </details>
+
 - [Powerful Discount Tickets (ABC141D)][ABC141D]
+  - 
+  - <details><summary>解法方針</summary>
+    hogehoge
+    </details>
+
 - [Equal Weight (JSC2019FA)][JSC2019FA]
+  - 
+  - <details><summary>解法方針</summary>
+    hogehoge
+    </details>
+
 - [Two Contests (AGC040B)][AGC040B]
+  -
+  - <details><summary>解法方針</summary>
+    hogehoge
+    </details>
+
 - [Gluttony(ABC144E)][ABC144E]
+  -
+  - <details><summary>解法方針</summary>
+    hogehoge
+    </details>
 
 
 [ABC138D]:https://atcoder.jp/contests/abc138/tasks/abc138_d
