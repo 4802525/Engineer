@@ -20,15 +20,15 @@ int main(void){
 
   //X以下でできるかの判定
   auto f = [&](ll X){
-    ll k = K;
+    ll k = 0;
     for(int i = 0; i<N; ++i){
       //A[i]*F[i]がX以下であるためにA[i]をQ以下にする必要がある
       ll Q = X/F[i];
       //Qになるまで修行．既にQ以下なら必要なし
-      k -= max(0ll, A[i]-Q);
+      k += max(0ll, A[i]-Q);
     }
     //修行回数がK以下ならtrue
-    return k>=0;
+    return k<=K;
   };
 
   // lは必ずできない，rは必ずできる状態にする
