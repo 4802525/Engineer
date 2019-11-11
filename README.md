@@ -10,35 +10,35 @@
       頂点pをねとする部分木に含まれる全ての頂点のカンターの値にxを足す
     - 全ての操作の後の各頂点のカウンターの値を求めよ．
   </details>
-  <details><summary>解法方針([解法][solveABC138D]</summary>
+  <details><summary>解法方針\([解法][solveABC138D]\)</summary>
   </details>
 
 - [Powerful Discount Tickets (ABC141D)][ABC141D]
   - 
   <details><summary>問題概要</summary>
   </details>
-  <details><summary>解法方針</summary>
+  <details><summary>解法方針[解法][solveABC141D]</summary>
   </details>
 
 - [Equal Weight (JSC2019FA)][JSC2019FA]
   - 
   <details><summary>問題概要</summary>
   </details>
-  <details><summary>解法方針</summary>
+  <details><summary>解法方針[解法][solveJSC2019FA]</summary>
   </details>
 
 - [Two Contests (AGC040B)][AGC040B]
   -
   <details><summary>問題概要</summary>
   </details>
-  <details><summary>解法方針</summary>
+  <details><summary>解法方針[解法][solveAGC040B]</summary>
   </details>
 
 - [Gluttony(ABC144E)][ABC144E]
   -
   <details><summary>問題概要</summary>
   </details>
-  <details><summary>解法方針</summary>
+  <details><summary>解法方針[][solveABC144E]</summary>
   </details>
 
 
