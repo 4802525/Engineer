@@ -10,7 +10,7 @@
       頂点pをねとする部分木に含まれる全ての頂点のカンターの値にxを足す
     - 全ての操作の後の各頂点のカウンターの値を求めよ．
   </details>
-  <details><summary>解法方針([解法](github.com/4802525/synapse/Ki_ABC138D.cpp)</summary>
+  <details><summary>解法方針([解法](https://github.com/4802525/synapse/Ki_ABC138D.cpp)</summary>
   </details>
 
 - [Powerful Discount Tickets (ABC141D)][ABC141D]
