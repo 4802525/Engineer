@@ -14,8 +14,7 @@ int main(void){
   for(int i = 0; i < N; ++i) cin >> A[i];
   for(int i = 0; i < N; ++i) cin >> F[i];
 
-  //貪欲に割り当てるため
-  //Aは降順，Fは昇順にソートする
+  //貪欲に割り当てるため，Aは降順，Fは昇順にソートする
   sort(A.begin(),A.end(),greater<ll>());
   sort(F.begin(),F.end());
 
