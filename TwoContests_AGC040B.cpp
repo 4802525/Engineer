@@ -5,7 +5,7 @@ using namespace std;
 struct Range{
   int L,R;
 
-  //照準そーとのための比較関数
+  //昇順ソートのための比較関数
   bool operator<(const Range &another) const{
     if(L == another.L) return R < another.R;
     return L < another.L;
@@ -28,7 +28,7 @@ int main(void){
   }
   sort(ranges.begin(),ranges.end());
 
-  //前方累積重複範囲
+  //前方累積共通部分
   vector<Range> fwd(N+1);
   fwd[0] = {1, (int)1e9+1};
   for(int i = 0; i < N; ++i){
@@ -38,7 +38,7 @@ int main(void){
     };
   }
 
-  //後方累積重複範囲
+  //後方累積共通部分
   vector<Range> bak(N+1);
   bak[N] = {1, (int)1e9+1};
   for(int i = N-1; i >= 0; --i){
