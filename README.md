@@ -1,6 +1,6 @@
 問題と解法例
 =====
-- [Ki (ABC138D)][ABC138D]
+- [Ki (ABC138D)][ABC138D]([解法][solveABC138D])
   - 
   <details><summary>問題概要</summary>
 
@@ -10,35 +10,35 @@
       頂点pをねとする部分木に含まれる全ての頂点のカンターの値にxを足す
     - 全ての操作の後の各頂点のカウンターの値を求めよ．
   </details>
-  <details><summary>解法方針 [解法][solveABC138D] </summary>
+  <details><summary>解法方針</summary>
   </details>
 
-- [Powerful Discount Tickets (ABC141D)][ABC141D]
+- [Powerful Discount Tickets (ABC141D)][ABC141D]([解法][solveABC141D])
   - 
   <details><summary>問題概要</summary>
   </details>
-  <details><summary>解法方針[解法][solveABC141D]</summary>
+  <details><summary>解法方針</summary>
   </details>
 
-- [Equal Weight (JSC2019FA)][JSC2019FA]
+- [Equal Weight (JSC2019FA)][JSC2019FA]([解法][solveJSC2019FA])
   - 
   <details><summary>問題概要</summary>
   </details>
-  <details><summary>解法方針[解法][solveJSC2019FA]</summary>
+  <details><summary>解法方針</summary>
   </details>
 
-- [Two Contests (AGC040B)][AGC040B]
+- [Two Contests (AGC040B)][AGC040B]([解法][solveAGC040B])
   -
   <details><summary>問題概要</summary>
   </details>
-  <details><summary>解法方針[解法][solveAGC040B]</summary>
+  <details><summary>解法方針</summary>
   </details>
 
-- [Gluttony(ABC144E)][ABC144E]
+- [Gluttony(ABC144E)][ABC144E]([解法][solveABC144E])
   -
   <details><summary>問題概要</summary>
   </details>
-  <details><summary>解法方針[][solveABC144E]</summary>
+  <details><summary>解法方針</summary>
   </details>
 
 
