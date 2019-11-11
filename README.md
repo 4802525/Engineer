@@ -47,6 +47,7 @@
 [JSC2019FA]:https://atcoder.jp/contests/jsc2019-final/tasks/jsc2019_final_a
 [AGC040B]:https://atcoder.jp/contests/agc040/tasks/agc040_b
 [ABC144E]:https://atcoder.jp/contests/abc144/tasks/abc144_e
+
 [solveABC138D]:https://github.com/4802525/synapse/blob/master/Ki_ABC138D.cpp
 [solveABC141D]:https://github.com/4802525/synapse/blob/master/PowerfulDiscountTickets_ABC141D.cpp
 [solveJSC2019FA]:https://github.com/4802525/synapse/blob/master/EqualWeight_JSCF2019A.cpp
