@@ -1,5 +1,6 @@
-問題と解法例
-=====
+アルゴリズム(競プロ)
+===
+##  問題と解法
 ここに挙げる問題は全てコンテスト中に自力で解いた問題になります．
 - [Ki (ABC138D)][ABC138D]([解法][solveABC138D])
   - 
@@ -19,6 +20,64 @@
         見ている頂点vの親のカウンターの値をvのカウンターに足す．  
 
       1はO(Q),2はO(N)なので全体の時間計算量はO(N+Q)で間に合う．
+  </details>
+
+  <details><summary>コード</summary>
+
+  ```c++
+  #include<bits/stdc++.h>
+  using namespace std;
+
+  //counterの値を親から子に伝搬させる
+  void dfs(int vertex, int parent, 
+      vector<vector<int> >& Tree, vector<int>& counter){
+
+    //親のカウンターの値を足し合わせる
+    counter[vertex] += counter[parent];
+
+    //子に伝播させる
+    for(const int &nxtv : Tree[vertex]){
+      if(nxtv == parent)continue;
+      dfs(nxtv, vertex, Tree, counter);
+    }
+  }
+
+  //方針：親から子にカウンターの値を伝播させていくことで実現
+  int main(void){
+    //入力
+    int N,Q;
+    cin >> N >> Q;
+    //木
+    vector<vector<int> > Tree(N+1);
+    //頂点のカウンター
+    vector<int> counter(N+1,0);
+    //木の構築
+    for(int i = 0; i < N-1; ++i){
+      int a,b;
+      cin >> a >> b;
+      Tree[a].push_back(b);
+      Tree[b].push_back(a);
+    }
+
+    //カウンターの加算
+    for(int j = 0; j < Q; ++j){
+      int p,x;
+      cin >> p >> x;
+      counter[p] += x;
+    }
+
+    //カウンターの伝搬
+    dfs(1,0,Tree,counter);
+
+    //出力
+    for(int i = 1; i <= N; ++i){
+      cout << counter[i] << " ";
+    }
+    cout << endl;
+    return 0;
+  }
+
+  ```
   </details>
 
 - [Powerful Discount Tickets (ABC141D)][ABC141D]([解法][solveABC141D])
@@ -45,6 +104,50 @@
     で行うことができる．
   </details>
 
+  <details><summary>コード</summary>
+
+  ```c++
+  #include<bits/stdc++.h>
+  using namespace std;
+
+  //方針：貪欲法(値段の高いものから割引券を適応していく
+  int main(void){
+    //入力
+    int N,M;
+    cin >> N >> M;
+
+    //高い金額から順に取り出すためのデータ構造
+    priority_queue<long long> prices;
+
+    //pricesに値段を記録していく．
+    for(int i = 0; i < N; ++i){
+      long long A;
+      cin >> A;
+      prices.push(A);
+    }
+
+    //割引券の使用(高いものから順に適応していく)
+    while(M--){
+      long long price = prices.top(); prices.pop();
+      //割引券の利用
+      price /= 2;
+
+      //割引した後も割引券は使えるので割引後の値段を挿入
+      prices.push(price);
+    }
+
+    //値段の合計
+    long long sum = 0ll;
+    while(!prices.empty()){
+      sum += prices.top(); prices.pop();
+    }
+
+    //出力
+    cout << sum << endl;
+  }
+  ```
+  </details>
+
 - [Equal Weight (JSC2019FA)][JSC2019FA]([解法][solveJSC2019FA])
   - 
   <details><summary>問題概要</summary>
@@ -61,6 +164,54 @@
       今までにwとなる握りが存在すれば，二つの異なる握りの重さが等しくなるようにできるといえる．
       しかし，O(NM)でも間に合わないように見える．
     - 実は鳩ノ巣原理により，握りの重さの最大値+1個の握りを見れば，必ず同じ重さのものが1組以上できるので間に合う．
+  </details>
+  <details><summary>コード</summary>
+
+  ```c++
+  #include<bits/stdc++.h>
+  using namespace std;
+
+  //2重ループの計算量はO(NM):間に合わない
+  //しかし鳩ノ巣原理により2重ループは高々max(Ai) + max(Bi)しか回らない(重複したら終了)
+  int main(){
+    //入力
+    int N,M;
+    cin >> N >> M;
+    vector<int> A(N);
+    vector<int> B(M);
+    for(int i = 0; i < N; ++i){
+      cin >> A[i];
+    }
+    for(int j = 0; j < M; ++j){
+      cin >> B[j];
+    }
+
+    const int MaxWeight = 2e6;
+    //indexが重さ，pairがその重さを作るためのiとj,存在しなければ-1
+    vector<pair<int,int> > ids(MaxWeight+1,make_pair(-1,-1));
+    //寿司とネタを全探索していく
+    for(int i = 0; i < N; ++i){
+      for( int j = 0; j < M; ++j){
+        int Weight = A[i]+B[j];
+        //既に同じ重さの別の組が存在するとき
+        if(ids[Weight].first != -1){
+          cout << ids[Weight].first << " "
+            << ids[Weight].second << " " 
+            << i << " "
+            << j << endl;
+          return 0;
+        }
+        //存在しないとき
+        ids[Weight] = make_pair(i,j);
+      }
+    }
+
+    //重さの等しい二つの握りが作れない
+    cout << -1 << endl;
+    return 0;
+  }
+
+  ```
   </details>
 
 - [Two Contests (AGC040B)][AGC040B]([解法][solveAGC040B])
@@ -83,6 +234,80 @@
       2は，最大範囲の長さと全ての共通部分の長さの和を取ると1と組み合わせて網羅できる．O(N)
 
     ボトルネックはソートの部分なのでO(NlogN)で間に合う．
+  </details>
+  <details><summary>コード</summary>
+
+  ```c++
+  #include<bits/stdc++.h>
+  using namespace std;
+
+  //正解者の範囲
+  struct Range{
+    int L,R;
+
+    //昇順ソートのための比較関数
+    bool operator<(const Range &another) const{
+      if(L == another.L) return R < another.R;
+      return L < another.L;
+    }
+
+  };
+
+  //範囲を昇順に並べ境界をずらしていく(境界の左が1回目のコンテスト問題，右が2回目のコンテスト問題)
+  //コーナーケースとして最大の範囲一つとそれ以外
+  int main(void){
+    //入力
+    int N;
+    cin >> N;
+    vector<Range> ranges(N);
+    for(int i = 0; i < N; ++i){
+      int L,R;
+      cin >> L >> R;
+      ++R;
+      ranges[i] = {L,R};
+    }
+    sort(ranges.begin(),ranges.end());
+
+    //前方累積共通部分
+    vector<Range> fwd(N+1);
+    fwd[0] = {1, (int)1e9+1};
+    for(int i = 0; i < N; ++i){
+      fwd[i+1] = {
+        max( ranges[i].L, fwd[i].L),
+        max( ranges[i].L, min( ranges[i].R, fwd[i].R ) )
+      };
+    }
+
+    //後方累積共通部分
+    vector<Range> bak(N+1);
+    bak[N] = {1, (int)1e9+1};
+    for(int i = N-1; i >= 0; --i){
+      bak[i] = {
+        max( ranges[i].L, bak[i+1].L),
+        max( ranges[i].L, min( ranges[i].R, bak[i+1].R ) )
+      };
+    }
+
+    //コーナーケースを初期値とする．
+    int joy = 0;
+    for(int i = 0; i < N; ++i){
+      //最大の範囲を取る
+      joy = max(joy,ranges[i].R-ranges[i].L);
+    }
+    joy += fwd[N].R-fwd[N].L;
+
+    //境界を見ていく．
+    for(int i = 1; i < N; ++i){
+      joy = max(joy, 
+          fwd[i].R-fwd[i].L + bak[i].R-bak[i].L);
+    }
+
+    //出力
+    cout << joy << endl;
+    return 0;
+  }
+
+  ```
   </details>
 
 - [Gluttony(ABC144E)][ABC144E]([解法][solveABC144E])
@@ -108,6 +333,57 @@
 
     - コストをX以下にできるかという判定問題ができたので，コストの最小値は判定問題がtrueである最小のX．  
       このようなXを求めるには二分探索を行えば良いので，時間計算量はO(Nlog(Fmax*Amax))となり，間に合う．
+  </details>
+  <details><summary>コード</summary>
+
+  ```c++
+  #include<bits/stdc++.h>
+  using namespace std;
+  using ll = long long;
+
+  //方針：K回の修行でかかる時間X以下にできるかの判定を考える
+  //ある時間を境にできるとできないが決まるので2分探索行う
+  int main(void){
+    //入力
+    int N;
+    ll K;
+    cin >> N >> K;
+    vector<ll> A(N);
+    vector<ll> F(N);
+    for(int i = 0; i < N; ++i) cin >> A[i];
+    for(int i = 0; i < N; ++i) cin >> F[i];
+
+    //貪欲に割り当てるため，Aは降順，Fは昇順にソートする
+    sort(A.begin(),A.end(),greater<ll>());
+    sort(F.begin(),F.end());
+
+    //X以下でできるかの判定
+    auto f = [&](ll X){
+      ll k = 0;
+      for(int i = 0; i<N; ++i){
+        //A[i]*F[i]がX以下であるためにA[i]をQ以下にする必要がある
+        ll Q = X/F[i];
+        //Qになるまで修行．既にQ以下なら必要なし
+        k += max(0ll, A[i]-Q);
+      }
+      //修行回数がK以下ならtrue
+      return k<=K;
+    };
+
+    // lは必ずできない，rは必ずできる状態にする
+    ll l = -1, r = 1e12;
+    //lとrが隣り合うまで続ける
+    while(r-l>1){
+      ll X = (l+r)/2;
+      if(f(X)) r = X;
+      else l = X;
+    }
+
+    //出力
+    cout << r << endl;
+  }
+
+  ```
   </details>
 
 
