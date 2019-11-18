@@ -2,7 +2,7 @@
 ===
 ##  問題と解法
 ここに挙げる問題は全てコンテスト中に自力で解いた問題になります．
-- [Ki (ABC138D)][ABC138D]([解法][solveABC138D])
+- [Ki (ABC138D)][ABC138D]
   - 
   <details><summary>問題概要</summary>
 
@@ -80,7 +80,7 @@
   ```
   </details>
 
-- [Powerful Discount Tickets (ABC141D)][ABC141D]([解法][solveABC141D])
+- [Powerful Discount Tickets (ABC141D)][ABC141D]
   - 
   <details><summary>問題概要</summary>
 
@@ -148,7 +148,7 @@
   ```
   </details>
 
-- [Equal Weight (JSC2019FA)][JSC2019FA]([解法][solveJSC2019FA])
+- [Equal Weight (JSC2019FA)][JSC2019FA]
   - 
   <details><summary>問題概要</summary>
 
@@ -214,7 +214,7 @@
   ```
   </details>
 
-- [Two Contests (AGC040B)][AGC040B]([解法][solveAGC040B])
+- [Two Contests (AGC040B)][AGC040B]
   -
   <details><summary>問題概要</summary>
 
@@ -310,7 +310,7 @@
   ```
   </details>
 
-- [Gluttony(ABC144E)][ABC144E]([解法][solveABC144E])
+- [Gluttony(ABC144E)][ABC144E]
   -
   <details><summary>問題概要</summary>
 
